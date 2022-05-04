@@ -9,16 +9,16 @@ void ordem(int n, float num[]);
 void entrada(int n, float num[]);
 
 int main() {
-  int tam;										//Declara variável inteira tam/ tamanho
-  float *p;										// Declara o ponteiro
+  int tam;	//Declara variável inteira tam/ tamanho
+  float *p;	// Declara o ponteiro
 
-  printf("Digite a qtd de num: \n");			// Solicita entrada ao usuário para o tamanho
-  scanf("%d", &tam);							// Entrada do usuário
+  printf("Digite a qtd de num: \n");	// Solicita entrada ao usuário para o tamanho
+  scanf("%d", &tam);	// Entrada do usuário
 
-  p = malloc(tam * sizeof(float));				// Alicação dinâmica do p
+  p = malloc(tam * sizeof(float));	// Alicação dinâmica do p
   
   //Chama as funções
-  entrada(tam, p);								//Chama função entrada
+  entrada(tam, p);	//Chama função entrada
   
   printf("--------- ORDENAÇAO ---------\n");
   ordem(tam, p);								//Chama função ordem
@@ -31,19 +31,19 @@ int main() {
   return 0;
 }
 
-int compara(const void*x, const void*y){				// Compara os array
+int compara(const void*x, const void*y){	// Compara os array
   float fx = *(const float *)x,fy = *(const float*)y;   // Define o valor fx p/ x; fy p/ y
-  return (fx>fy) - (fx<fy);								// Retorna 1 se fx for maior que fy e -1 se for menor.
+  return (fx>fy) - (fx<fy);	 // Retorna 1 se fx for maior que fy e -1 se for menor.
 }
 
 
-void entrada(int tam, float num[]){							//Função de entrada para inserir as informações
+void entrada(int tam, float num[]){	 //Função de entrada para inserir as informações
   printf("Digite os numeros para serem ordenados: \n");		
-  for(int i=0; i<tam; i++){									// Laço de repetição para percorrer pelo array
-    scanf("%f", &num[i]);									// Insere o valor no array
+  for(int i=0; i<tam; i++){		// Laço de repetição para percorrer pelo array
+    scanf("%f", &num[i]);			// Insere o valor no array
   }
 }
 
-void ordem(int tam, float num[]){							//Função de ordenação
-   qsort(num, n, sizeof(float), compara_array);				//Chama função qsort
+void ordem(int tam, float num[]){		//Função de ordenação
+   qsort(num, n, sizeof(float), compara_array);	 //Chama função qsort
 }
