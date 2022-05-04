@@ -45,5 +45,5 @@ void entrada(int tam, float num[]){	//Função de entrada para inserir as inform
 }
 
 void ordem(int tam, float num[]){	//Função de ordenação
-   qsort(num, tam, sizeof(float), compara_array); //Chama função qsort
+   qsort(num, tam, sizeof(float), compara); //Chama função qsort
 }
